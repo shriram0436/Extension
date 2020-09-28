@@ -14,7 +14,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         var txt=[];
         var i;
         for (i = 0; i < x.length; i++) {
-            txt.push(x[i].href);
+            var str = x[i].href;
+            var n = str.includes("twitter");
+            if(n){
+                txt.push(x[i].href);
+            }
+            
         }
         console.log(txt);
         sendResponse({
@@ -34,7 +39,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         var txt=[];
         var i;
         for (i = 0; i < x.length; i++) {
-            txt.push(x[i].href);
+            var str = x[i].href;
+            var n = str.includes("facebook");
+            if(n){
+                txt.push(x[i].href);
+            }
         }
         console.log(txt);
         sendResponse({
@@ -54,7 +63,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         var txt=[];
         var i;
         for (i = 0; i < x.length; i++) {
-            txt.push(x[i].href);
+            var str = x[i].href;
+            var n = str.includes("linkedin");
+            if(n){
+                txt.push(x[i].href);
+            }
         }
         console.log(txt);
         sendResponse({
